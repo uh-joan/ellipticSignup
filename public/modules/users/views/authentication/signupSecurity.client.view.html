@@ -1,0 +1,114 @@
+<div class="form-group">
+
+    <div class="col-md-offset-2 col-md-10">
+        <h3 class="form-group">Security</h3>
+    </div>
+
+
+        <div class="col-md-offset-2 col-md-4">
+            <div class="form-group">
+                <label class="text-muted label-text" >Telephone password (minimum 8 letters) *</label>
+                <input type="password" required id="password"
+                       name="password" class="form-control"
+                       data-ng-model="credentials.password">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-4">
+            <div class="form-group">
+                <label class="text-muted label-text" >Re-enter telephone password *</label>
+                <input type="password" required id="password2"
+                       name="password2" class="form-control"
+                       data-match="credentials.password"
+                       data-ng-model="credentials.password2">
+            </div>
+        </div>
+
+
+
+        <div class="col-md-offset-2 col-md-2">
+            <div class="form-group">
+                <label class="text-muted label-text" >Passport number</label>
+                <input type="text" id="passport" name="passport"
+                       class="form-control"
+                       data-ng-model="credentials.passport">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-2">
+            <div class="form-group">
+                <label class="text-muted label-text" >Driving license number</label>
+                <input type="text" id="driving" name="driving"
+                       class="form-control"
+                       data-ng-model="credentials.driving">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-3">
+            <div class="form-group">
+                <label class="text-muted label-text" >Social security number (US citizens)</label>
+                <input type="text" id="social" name="social"
+                       class="form-control"
+                       data-ng-model="credentials.social">
+            </div>
+        </div>
+
+
+
+        <div class="col-md-offset-2 col-md-2">
+            <div class="form-group">
+                <label class="text-muted label-text" >Date of birth*</label>
+                <p class="input-group">
+                    <input type="text" required class="form-control"
+                           datepicker-popup="MM/dd/yyyy"
+                           is-open="$parent.opened"
+                           data-ng-model="credentials.dateofbirth"
+                           datepicker-options="dateOptions"
+                           required close-text="Close"
+                           placeholder="mm/dd/yyyy"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"
+                                ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-2">
+            <div class="form-group">
+                <label class="text-muted label-text" >Mother's maiden name *</label>
+                <input type="text" required id="mothersName"
+                       name="mothersName" class="form-control"
+                       data-ng-model="credentials.mothersName">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-3">
+            <div class="form-group">
+                <label class="text-muted label-text" >Name of first school attended *</label>
+                <input type="text" required id="school"
+                       name="school" class="form-control"
+                       data-ng-model="credentials.school">
+            </div>
+        </div>
+
+
+    <p class="col-md-offset-2 col-md-3"></p>
+
+
+    <div class=" col-md-offset-2 col-md-3">
+            <div class="form-group">
+                <label class="text-muted label-text" >Specify our Liability for your account in GBP *</label>
+                <input type="text" required id="liability"
+                       name="liability" class="form-control"
+                       data-ng-model="credentials.liability">
+            </div>
+        </div>
+
+
+
+        <div class="text-center col-md-offset-2 col-md-9">
+        <div class="form-group">
+            <button type="submit"  ng-disabled="userForm.$invalid"
+                    class="btn btn-success btn-block">Sign up</button>&nbsp; or&nbsp;
+            <a href="/#!/signin" class="show-signup">Sign in</a>
+        </div>
+    </div>
+
+</div>
+
