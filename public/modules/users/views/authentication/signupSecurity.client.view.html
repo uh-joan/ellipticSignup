@@ -1,11 +1,11 @@
-<div class="form-group">
-
-    <div class="col-md-offset-2 col-md-10">
-        <h3 class="form-group">Security</h3>
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 class="text-muted form-group" >Security Questions</h4>
+        </div>
     </div>
 
-
-        <div class="col-md-offset-2 col-md-4">
+    <div class="row">
+        <div class="col-md-5">
             <div class="form-group">
                 <label class="text-muted label-text" >Telephone password (minimum 8 letters) *</label>
                 <input type="password" required id="password"
@@ -13,7 +13,7 @@
                        data-ng-model="credentials.password">
             </div>
         </div>
-        <div class="col-md-offset-1 col-md-4">
+        <div class="col-md-offset-1 col-md-6">
             <div class="form-group">
                 <label class="text-muted label-text" >Re-enter telephone password *</label>
                 <input type="password" required id="password2"
@@ -22,44 +22,17 @@
                        data-ng-model="credentials.password2">
             </div>
         </div>
+    </div>
 
-
-
-        <div class="col-md-offset-2 col-md-2">
-            <div class="form-group">
-                <label class="text-muted label-text" >Passport number</label>
-                <input type="text" id="passport" name="passport"
-                       class="form-control"
-                       data-ng-model="credentials.passport">
-            </div>
-        </div>
-        <div class="col-md-offset-1 col-md-2">
-            <div class="form-group">
-                <label class="text-muted label-text" >Driving license number</label>
-                <input type="text" id="driving" name="driving"
-                       class="form-control"
-                       data-ng-model="credentials.driving">
-            </div>
-        </div>
-        <div class="col-md-offset-1 col-md-3">
-            <div class="form-group">
-                <label class="text-muted label-text" >Social security number (US citizens)</label>
-                <input type="text" id="social" name="social"
-                       class="form-control"
-                       data-ng-model="credentials.social">
-            </div>
-        </div>
-
-
-
-        <div class="col-md-offset-2 col-md-2">
+    <div class="row">
+        <div class="col-md-3">
             <div class="form-group">
                 <label class="text-muted label-text" >Date of birth*</label>
                 <p class="input-group">
                     <input type="text" required class="form-control"
                            datepicker-popup="MM/dd/yyyy"
                            is-open="$parent.opened"
-                           data-ng-model="credentials.dateofbirth"
+                           data-ng-model="credentials.dateOfBirth"
                            datepicker-options="dateOptions"
                            required close-text="Close"
                            placeholder="mm/dd/yyyy"/>
@@ -70,7 +43,8 @@
                 </p>
             </div>
         </div>
-        <div class="col-md-offset-1 col-md-2">
+
+        <div class="col-md-offset-1 col-md-3">
             <div class="form-group">
                 <label class="text-muted label-text" >Mother's maiden name *</label>
                 <input type="text" required id="mothersName"
@@ -78,7 +52,8 @@
                        data-ng-model="credentials.mothersName">
             </div>
         </div>
-        <div class="col-md-offset-1 col-md-3">
+
+        <div class="col-md-offset-1 col-md-4">
             <div class="form-group">
                 <label class="text-muted label-text" >Name of first school attended *</label>
                 <input type="text" required id="school"
@@ -86,29 +61,79 @@
                        data-ng-model="credentials.school">
             </div>
         </div>
+    </div>
 
+    <div class="row">
+        <div class=" col-md-12">
+            <h5 class="text-muted form-group" >At least on of the following</h5>
+        </div>
+    </div>
 
-    <p class="col-md-offset-2 col-md-3"></p>
-
-
-    <div class=" col-md-offset-2 col-md-3">
+    <div class="row">
+        <div class="col-md-3">
             <div class="form-group">
-                <label class="text-muted label-text" >Specify our Liability for your account in GBP *</label>
-                <input type="text" required id="liability"
+                <label class="text-muted label-text" >Passport number</label>
+                <input type="text" id="passport" name="passport"
+                       class="form-control"
+                       data-ng-model="credentials.passport">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-3">
+            <div class="form-group">
+                <label class="text-muted label-text" >Driving license number</label>
+                <input type="text" id="driving" name="driving"
+                       class="form-control"
+                       data-ng-model="credentials.driving">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-4">
+            <div class="form-group">
+                <label class="text-muted label-text" >Social security number (US citizens)</label>
+                <input type="text" id="social" name="social"
+                       class="form-control"
+                       data-ng-model="credentials.social">
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 class="text-muted form-group" >Elliptic's Liability Limit</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group">
+                <label class="text-muted label-text" >Specify our Liability Limit for your account in GBP *</label>
+                <input type="number" required id="liability"
                        name="liability" class="form-control"
                        data-ng-model="credentials.liability">
             </div>
         </div>
+    </div>
 
+    <hr />
 
-
-        <div class="text-center col-md-offset-2 col-md-9">
-        <div class="form-group">
-            <button type="submit"  ng-disabled="userForm.$invalid"
-                    class="btn btn-success btn-block">Sign up</button>&nbsp; or&nbsp;
-            <a href="/#!/signin" class="show-signup">Sign in</a>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-1"><input required type="checkbox" data-ng-model="credentials.certify"></div>
+                <div class="text-justify text-certify col-md-11">
+                    <p>I certify that information on this form and all other information given in support of this application are correct. I authorize any enquiries necessary to be made (including checks with credit reference agencies) to confirm the information. I also confirm that I understand the purpose of this form and the reasons for the collection of my personal data (to the extent that this form contains information which is personal data for the purposes of the Data Protection Act 1998) and that I agree to my personal data being used as stated. Information regarding the collection and processing of personal data is found in the Privacy Statement of our <a href="http://www.elliptic.co/vault/privacy"> website</a>.</p>
+                </div>
+            </div>
         </div>
     </div>
 
-</div>
-
+    <div class="row">
+        <div class="text-center col-md-offset-4 col-md-4">
+            <div class="form-group">
+                <button type="submit"  ng-disabled="userForm.$invalid"
+                        class="btn btn-info btn-block">Sign up</button>&nbsp; or&nbsp;
+                <a href="/#!/signin" class="show-signup">Sign in</a>
+            </div>
+        </div>
+    </div>

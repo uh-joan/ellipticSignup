@@ -28,19 +28,11 @@ var validateLocalStrategyPassword = function(password) {
 };
 
 /**
- * A Validation function for local strategy email
+ * A Validation function for local strategy properties
  */
-/*var validateLocalStrategyEmail = function(email2) {
-    console.log(this.email);
-    console.log(email2);
-    console.log('emails not the same? ',this.email !== this.email2  );
-    return (this.email !== this.email2 );
+var validateLocalStrategyAtLeastOne = function() {
+    return ( this.passport || this.social || this.driving);
 };
-
-var many= [
-    {validator: validateLocalStrategyEmail, msg :'Emails don\'t match'},
-    {validator: validateLocalStrategyProperty, msg :'Please re-enter email'}
-];*/
 
 var validateEmails = function(email2) {
     return (validator.equals(email2, this.email) );
@@ -117,21 +109,96 @@ var UserSchema = new Schema({
         validate: [validateEmails, 'Emails do not match'],
         match: [/.+\@.+\..+/, 'Please fill a valid email address']
     },
+    prevAddress1: {
+        trim: true,
+        type: String,
+        default: ''
+    },
+    prevAddress2: {
+        trim: true,
+        type: String,
+        default: ''
+    },
+    prevCity: {
+        trim: true,
+        type: String,
+        default: ''
+    },
+    prevPostal: {
+        trim: true,
+        type: String,
+        default: ''
+    },
+    prevCountry: {
+        trim: true,
+        type: String,
+        default: ''
+    },
 	username: {
+        trim: true,
 		type: String,
 		unique: 'testing error message',
-		required: 'Please fill in a username',
-		trim: true
+		required: 'Please fill in a username'
 	},
 	password: {
 		type: String,
 		default: '',
+        trim: true,
 		validate: [validateLocalStrategyPassword, 'Password should at least 8 characters long']
 	},
     password2: {
         type: String,
         default: '',
+        trim: true,
         validate: [validateLocalStrategyPassword, 'Password should at least 8 characters long']
+    },
+    dateOfBirth: {
+        type: Date,
+        default: ''
+        //validate: [validateLocalStrategyProperty, 'Please fill in your date']
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
+    },
+    passport: {
+        type: String,
+        default: '',
+        trim: true,
+        validate: [validateLocalStrategyAtLeastOne, 'Please fill at least one Passport Number, Driving License or Social security Number']
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
+    },
+    driving: {
+        type: String,
+        default: '',
+        trim: true,
+        validate: [validateLocalStrategyAtLeastOne, 'Please fill at least one Passport Number, Driving License or Social security Number']
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
+    },
+    social: {
+        type: String,
+        default: '',
+        trim: true,
+        validate: [validateLocalStrategyAtLeastOne, 'Please fill at least one Passport Number, Driving License or Social security number']
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
+    },
+    mothersName: {
+        type: String,
+        default: '',
+        trim: true,
+        validate: [validateLocalStrategyProperty, 'Please fill in your mother\'s maiden name']
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
+    },
+    school: {
+        type: String,
+        default: '',
+        trim: true,
+        validate: [validateLocalStrategyProperty, 'Please fill in the name of first school attended']
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
+    },
+    liability: {
+        type: Number,
+        default: '',
+        trim: true,
+        validate: [validateNumber, 'Please specify our Liability Limit for your account in GBP']//,
+        //match: [/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/, 'Please fill a valid date of birth (mm/dd/yyyy)']
     },
 	salt: {
 		type: String
@@ -169,16 +236,17 @@ var UserSchema = new Schema({
  * Hook a pre save method to hash the password
  */
 UserSchema.pre('save', function(next) {
-	if (this.password && this.password.length > 6) {
+	if (this.password && this.password.length > 7) {
 		this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
 		this.password = this.hashPassword(this.password);
 	}
 
+    if (this.password2 && this.password2.length > 7) {
+        this.password2 = this.hashPassword(this.password2);
+    }
+
 	next();
 });
-
-//UserSchema.set('username', this.email);
-
 
 //UserSchema.path('email2').validate(function(){
     //console.log (validator.equals(this.email2, this.email));

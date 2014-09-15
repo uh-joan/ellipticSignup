@@ -1,44 +1,47 @@
 <section class="row" data-ng-controller="AuthenticationController">
     <div class="row">
 
-        <!--h3 class="col-md-12 text-center">Sign up using your social accounts</h3>
-        <div class="col-md-12 text-center">
-            <a href="/auth/facebook" class="undecorated-link">
-                <img src="/modules/users/img/buttons/facebook.png">
-            </a>
-            <a href="/auth/twitter" class="undecorated-link">
-                <img src="/modules/users/img/buttons/twitter.png">
-            </a>
-            <a href="/auth/google" class="undecorated-link">
-                <img src="/modules/users/img/buttons/google.png">
-            </a>
-            <a href="/auth/linkedin" class="undecorated-link">
-                <img src="/modules/users/img/buttons/linkedin.png">
-            </a>
-            <a href="/auth/github" class="undecorated-link">
-                <img src="/modules/users/img/buttons/github.png">
-            </a>
-        </div-->
-        <h3 class="col-md-12 text-center">Sign up</h3>
+        <div class="row">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <h1>Elliptic Vault <b>Application Form</b></h1>
+                    </div>
+                </div>
 
-        <div class="page-header text-center">
-            <div  class="text-center status-buttons">
-                <a ui-sref-active="active" ui-sref=".details"><span>1</span>Details</a>
-                <a ui-sref-active="active" ui-sref=".address"><span>2</span>Address</a>
-                <a ui-sref-active="active" ui-sref=".security"><span>3</span>Security</a>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div data-ng-show="error" class="text-center text-danger">
-                <div class="alert alert-danger" role="alert">
-                    <strong data-ng-bind="error"></strong>
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <h4 class="text-muted text-justify"> To apply for an Elliptic Vault account please complete the form below. <br>
+                        By submitting an application form you are not committing to make any purchase or to opening an account.<br>
+                        We will contact you once your application has been processed. </h4>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-offset-1 col-md-10">
-            <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="text-center">
+                <div  class="text-center status-buttons">
+                    <a ui-sref-active="active" ui-sref=".details"><span>1</span>Details</a>
+                    <a ui-sref-active="active" ui-sref=".address"><span>2</span>Address</a>
+                    <a ui-sref-active="active" ui-sref=".security"><span>3</span>Security</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form-group">
+                <div data-ng-show="error" class="text-center text-danger">
+                    <div class="alert alert-danger" role="alert">
+                        <strong data-ng-bind="error"></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="on">
                     <div id="form-view" ui-view>
 
                     </div>
@@ -47,92 +50,19 @@
                 {{ credentials }}
             </pre-->
         </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="form-group">
+                    <div data-ng-show="success" class="text-center success">
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Success!</strong> Your application has been submitted. We'll be in touch soon regarding the next steps.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
-
-
-
-<!--section class="row" data-ng-controller="AuthenticationController">
-    <div class="row">
-
-        <h3 class="col-md-12 text-center">Sign up</h3>
-        <div class="col-md-offset-3 col-md-6">
-            <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
-                <fieldset>
-
-                    <div class="form-group">
-                        <div data-ng-show="error" class="text-center text-danger">
-                            <div class="alert alert-danger" role="alert">
-                                <strong data-ng-bind="error"></strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-5">
-
-                            <div class="form-group">
-                                <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" required id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" required id="address1" name="address1" data-ng-model="credentials.address1" class="form-control" placeholder="Address line 1">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" required id="city" name="city" data-ng-model="credentials.city" class="form-control" placeholder="City">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" required id="country" data-ng-model="credentials.country" name="country" class="form-control" placeholder="Country">
-                            </div>
-                        </div>
-
-                        <div class="col-md-offset-2 col-md-5">
-                            <div class="form-group">
-                                <input type="text" required id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">
-                            </div>
-
-                            <div class="form-group">
-                                <input   type="email" required id="email2" name="email2" data-ng-model="credentials.email2" data-match="credentials.email" class="form-control" placeholder="Re-enter email">
-
-
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" id="address2" name="address2" class="form-control" placeholder="Address line 2">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" required id="postal" name="postal" data-ng-model="credentials.postal" class="form-control" placeholder="Postal/Zip code">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="number" required id="phone" name="phone" data-ng-model="credentials.phone" class="form-control" placeholder="Phone, with country code">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="username" required name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="password" id="password" required name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
-                    </div>
-
-                    <div class="text-center form-group">
-                        <button type="submit"  class="btn btn-success btn-block">Sign up</button>&nbsp; or&nbsp;
-                        <a href="/#!/signin" class="show-signup">Sign in</a>
-                    </div>
-
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</section-->

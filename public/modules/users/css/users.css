@@ -19,6 +19,19 @@
     font-size: 10px;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
+.text-certify {
+    color: #808080;
+    font-size: 11px;
+}
+
+.text-signgup-header{
+    color:#E8E8E8
+}
+
 .status-buttons a {
     color: #ffffff;
     display: inline-block;
@@ -34,7 +47,7 @@
     background: #080808;
     display: block;
     height: 30px;
-    margin: 0 auto 10px;
+    margin: 0 auto;
     padding-top: 5px;
     width: 30px;
     border-radius: 50%;

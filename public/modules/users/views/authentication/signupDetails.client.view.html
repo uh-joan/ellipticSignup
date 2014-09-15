@@ -1,13 +1,13 @@
 
-<div class="form-group">
 
-        <div class="col-md-offset-2 col-md-10">
-            <h3 class="form-group" >Personal Details</h3>
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 class="text-muted form-group" >Personal Details</h4>
         </div>
+    </div>
 
-
-
-        <div class="col-md-offset-2 col-md-4">
+    <div class="row">
+        <div class="col-md-5">
             <div class="form-group">
                 <label class="text-muted label-text" >First Name *</label>
                 <input type="text" required id="firstName"
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="col-md-offset-1 col-md-4">
+        <div class="col-md-offset-1 col-md-6">
             <div class="form-group">
                 <label class="text-muted label-text" >Last Name *</label>
                 <input type="text" required id="lastName"
@@ -24,8 +24,10 @@
                        data-ng-model="credentials.lastName">
             </div>
         </div>
+    </div>
 
-        <div  class="col-md-offset-2 col-md-4">
+    <div class="row">
+        <div  class="col-md-5">
             <div class="form-group">
                 <label class="text-muted label-text" >Email address *</label>
                 <input type="email" required id="email"
@@ -34,7 +36,7 @@
             </div>
         </div>
 
-        <div class="col-md-offset-1 col-md-4">
+        <div class="col-md-offset-1 col-md-6">
             <div class="form-group">
                 <label class="text-muted label-text" >Re-enter email address *</label>
                 <input type="email" required id="email2"
@@ -42,64 +44,23 @@
                        data-match="credentials.email" class="form-control">
             </div>
         </div>
+    </div>
 
-        <div  class="col-md-offset-2 col-md-4">
-            <div class="form-group">
-                <label class="text-muted label-text" >Address line 1 *</label>
-                <input type="text" required id="address1"
-                       name="address1" data-ng-model="credentials.address1"
-                       class="form-control">
-            </div>
-        </div>
 
-        <div class="col-md-offset-1 col-md-4">
+    <div class="row">
+        <div class="col-md-5">
             <div class="form-group">
-                <label class="text-muted label-text" >Address line 2</label>
-                <input type="text" id="address2" name="address2"
-                       data-ng-model="credentials.address2"
-                       class="form-control">
-            </div>
-        </div>
-
-        <div class="col-md-offset-2 col-md-4">
-            <div class="form-group">
-                <label class="text-muted label-text" >City *</label>
-                <input type="text" required id="city"
-                       name="city" data-ng-model="credentials.city"
-                       class="form-control">
-            </div>
-        </div>
-
-        <div class="col-md-offset-1 col-md-4">
-            <div class="form-group">
-                <label class="text-muted label-text" >Postal/Zip code *</label>
-                <input type="text" required id="postal"
-                       name="postal" data-ng-model="credentials.postal"
-                       class="form-control">
-            </div>
-        </div>
-
-        <div class="col-md-offset-2 col-md-4">
-            <div class="form-group">
-                <label class="text-muted label-text" >Country *</label>
-                <country-select class="form-control" required
-                                id="country" data-ng-model="credentials.country"
-                                name="country">
-                </country-select>
-            </div>
-        </div>
-
-        <div class="col-md-offset-1 col-md-4">
-            <div class="form-group">
-                <label class="text-muted label-text" >Phone number, with country code (e.g. 12125551234) *</label>
+                <label class="text-muted label-text" >Phone number, with country code(e.g. 12125551234) *</label>
                 <input type="number" required id="phone"
                        name="phone" data-ng-model="credentials.phone"
                        class="form-control">
             </div>
         </div>
+    </div>
 
-        <div class="text-center form-group">
-            <div class="col-md-4 col-md-offset-4">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="text-center form-group">
                 <a ui-sref="signup.address"
                    ng-disabled="userForm.$invalid"
                    class="btn btn-block btn-info">
@@ -107,5 +68,4 @@
                 </a>
             </div>
         </div>
-
-</div>
+    </div>
