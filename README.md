@@ -17,7 +17,7 @@ ellipticSignup
 <li>Also available SignIn form, change password and edit profile.</li>
 </ul>
 </div>
-<br><br>
+
 <div class="well col-md-offset-2 col-md-8">
 <p>Technologies used:</p>
 <ul>
