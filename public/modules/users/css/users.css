@@ -65,6 +65,7 @@
     padding-top: 5px;
     width: 30px;
     border-radius: 50%;
+    color:gray;
 }
 .status-buttons a.active span {
     background: #1793a5
