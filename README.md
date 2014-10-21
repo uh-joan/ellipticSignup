@@ -3,9 +3,6 @@
 ellipticSignup
 --------------
 
-  Elliptic.co: a bunch of smartass bankers disguised in startup wannabes...
-
-
 Full-Stack Solution For Elliptic SignUp From
 
 This sample includes a three steps Sign Up <em>Application</em> Form following the information provided at elliptic/home/vault/<a href="https://www.elliptic.co/vault/application">signup</a></p>
@@ -45,3 +42,5 @@ Errors are provided when submitting forms.
 <a href="http://nodejs.org/"><strong>N</strong>ode.js</a> as the web server.
 </li>
 </ul>
+
+NOTE: Watch out with Elliptic.co: a bunch of smartass bankers disguised in startup wannabes...
