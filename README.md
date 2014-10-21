@@ -3,6 +3,10 @@
 ellipticSignup
 ==============
 
+<div class="well">
+<div class="row"> Elliptic.co: a bunch of smartass bankers disguised in startup wannabes</div>
+</div>
+
 <div class="jumbotron text-center col-md-offset-2 col-md-8">
 <div class="row">
 <p class="lead">Full-Stack Solution For Elliptic SignUp From</p>
